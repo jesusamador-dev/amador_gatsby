@@ -1,0 +1,271 @@
+/* =======================
+    Estilos del header
+    =======================*/
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    z-index: 10;
+    background-color: change-color($color: $My-Color-Theme-2-hex, $alpha: .75);
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: var(--background-color);
+    color: var(--color-text);
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    box-shadow: 15px 0px 38px 0px rgba(0, 0, 0, 0.1);
+    @include respond-to('lg') {
+        background-color: var(--background-color);
+        color: var(--color-text);
+    }
+}
+
+.nav {
+    display: none;
+    &__brand {
+        display: flex;
+        justify-content: center;
+    }
+    &__logo {
+        width: 100px;
+    }
+    &__redes_sociales {
+        display: none;
+    }
+    &__icon {
+        color: $My-Color-Theme-5-hex;
+        margin: 0 1rem;
+        text-decoration: none;
+    }
+    @include respond-to('lg') {
+        height: 80px;
+        display: block;
+        &__brand {
+            width: 13%;
+            margin: 0 1.75rem 0 0;
+        }
+        &__logo {
+            display: block;
+            width: 120px;
+        }
+        &__icon {
+            color: var(--color-text);
+            border: 1px $My-Color-Theme-4-hex solid;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            margin: 0 .2rem;
+            border-radius: 50%;
+            display: flex;
+            transition: all 0.3s ease-out;
+            &:hover {
+                border-color: rgba(255, 255, 255, 0);
+                box-shadow: 4px 3px 15px 0px rgba(0, 0, 0, 0.15);
+            }
+        }
+        &__redes_sociales {
+            height: 100%;
+            margin: 0 0 0 1.75rem;
+            width: 13%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+}
+
+.mobile_menu_open {
+    .navbar_container_mobile {
+        transform: translate(0%);
+        overflow: visible;
+    }
+    .overlay {
+        height: 100%;
+    }
+    .hamburger_inner {
+        span:nth-child(1) {
+            animation: ease .7s .4s span_top_45 forwards;
+        }
+        span:nth-child(2) {
+            animation: ease .7s .4s span_scaled_1 forwards;
+        }
+        span:nth-child(3) {
+            animation: ease .7s .4s burger_bottom_135 forwards;
+        }
+    }
+}
+
+.mobile_menu_close {
+    .hamburger_inner {
+        span:nth-child(1) {
+            animation: ease .7s .4s span_top_2_45 backwards;
+        }
+        span:nth-child(2) {
+            animation: ease .7s .4s span_scaled_2 backwards;
+        }
+        span:nth-child(3) {
+            animation: ease .7s .4s span_bottom_2_135 backwards;
+        }
+    }
+}
+
+.navbar_container {
+    max-width: 1920px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.navbar_container_mobile {
+    color: $My-Color-Theme-5-hex;
+    position: fixed;
+    z-index: 999;
+    background-color: $My-Color-Theme-2-hex;
+    overflow: hidden;
+    width: calc(100% - 50px);
+    height: 100%;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.45s ease-in-out;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    @include respond-to(md) {
+        width: 300px;
+    }
+    @include respond-to(lg) {
+        display: none;
+    }
+}
+
+.delimitter {
+    display: none;
+    @include respond-to('lg') {
+        display: block;
+        height: 100%;
+        width: 1px;
+        margin: 0 .5rem;
+        background-color: $My-Color-Theme-4-hex;
+    }
+}
+
+.navbar {
+    display: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    @include respond-to('lg') {
+        display: flex;
+        &__item {
+            display: inline-block;
+            height: 100%;
+        }
+        &__link {
+            font-family: $font2, monospace;
+            font-weight: 700;
+            letter-spacing: .02rem;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 0 1.75rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &>span {
+                position: relative;
+            }
+            &>span::after {
+                background-color: change-color($color: $My-Color-Theme-1-hex, $alpha: .8);
+                content: '';
+                position: absolute;
+                left: -5px;
+                bottom: 0.4em;
+                width: 0;
+                height: 6px;
+                transition: 0.2s 0.2s;
+            }
+            &:hover {
+                span::after {
+                    width: calc(100% + 10px);
+                }
+            }
+        }
+        &__text {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.navbar_mobile {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 0;
+    &__item {
+        display: block;
+        float: none;
+    }
+    &__link {
+        padding: .8rem 0;
+        font-family: $font2, monospace;
+        font-size: 1.3rem;
+        color: $My-Color-Theme-5-hex;
+        text-decoration: none;
+        display: block;
+    }
+    &__redes_sociales {
+        display: flex;
+        margin: 1rem 0;
+    }
+}
+
+.hamburger_box {
+    padding: 20px;
+    padding-left: 0;
+    cursor: pointer;
+    .hamburger_inner {
+        width: 20px;
+        line-height: 0;
+        span {
+            display: inline-block;
+            position: relative;
+            width: 20px;
+            height: 2px;
+            vertical-align: top;
+            background: currentColor;
+        }
+        span+span {
+            margin-top: 5px;
+        }
+    }
+    @include respond-to('lg') {
+        display: none;
+    }
+}
+
+.hamburger_close {
+    position: absolute;
+    top: 54px;
+    right: -50px;
+}
+
+.active>span::after {
+    width: calc(100% + 10px);
+}

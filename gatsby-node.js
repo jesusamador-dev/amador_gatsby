@@ -59,114 +59,114 @@ exports.createPages = async ({ graphql, actions }) => {
     const posts = result.data.allGhostPost.edges
 
     // Load templates
-    const indexTemplate = path.resolve(`./src/templates/index.js`)
+    const blogTemplate = path.resolve(`./src/templates/blog.js`)
     const tagsTemplate = path.resolve(`./src/templates/tag.js`)
     const authorTemplate = path.resolve(`./src/templates/author.js`)
     const pageTemplate = path.resolve(`./src/templates/page.js`)
     const postTemplate = path.resolve(`./src/templates/post.js`)
 
     // Create tag pages
-    tags.forEach(({ node }) => {
-        const totalPosts = node.postCount !== null ? node.postCount : 0
-        const numberOfPages = Math.ceil(totalPosts / postsPerPage)
+    // tags.forEach(({ node }) => {
+    //     const totalPosts = node.postCount !== null ? node.postCount : 0
+    //     const numberOfPages = Math.ceil(totalPosts / postsPerPage)
 
-        // This part here defines, that our tag pages will use
-        // a `/tag/:slug/` permalink.
-        node.url = `/tag/${node.slug}/`
+    //     // This part here defines, that our tag pages will use
+    //     // a `/tag/:slug/` permalink.
+    //     node.url = `/tag/${node.slug}/`
 
-        Array.from({ length: numberOfPages }).forEach((_, i) => {
-            const currentPage = i + 1
-            const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
-            const nextPageNumber =
-                currentPage + 1 > numberOfPages ? null : currentPage + 1
-            const previousPagePath = prevPageNumber
-                ? prevPageNumber === 1
-                    ? node.url
-                    : `${node.url}page/${prevPageNumber}/`
-                : null
-            const nextPagePath = nextPageNumber
-                ? `${node.url}page/${nextPageNumber}/`
-                : null
+    //     Array.from({ length: numberOfPages }).forEach((_, i) => {
+    //         const currentPage = i + 1
+    //         const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
+    //         const nextPageNumber =
+    //             currentPage + 1 > numberOfPages ? null : currentPage + 1
+    //         const previousPagePath = prevPageNumber
+    //             ? prevPageNumber === 1
+    //                 ? node.url
+    //                 : `${node.url}page/${prevPageNumber}/`
+    //             : null
+    //         const nextPagePath = nextPageNumber
+    //             ? `${node.url}page/${nextPageNumber}/`
+    //             : null
 
-            createPage({
-                path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
-                component: tagsTemplate,
-                context: {
-                    // Data passed to context is available
-                    // in page queries as GraphQL variables.
-                    slug: node.slug,
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numberOfPages: numberOfPages,
-                    humanPageNumber: currentPage,
-                    prevPageNumber: prevPageNumber,
-                    nextPageNumber: nextPageNumber,
-                    previousPagePath: previousPagePath,
-                    nextPagePath: nextPagePath,
-                },
-            })
-        })
-    })
+    //         createPage({
+    //             path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
+    //             component: tagsTemplate,
+    //             context: {
+    //                 // Data passed to context is available
+    //                 // in page queries as GraphQL variables.
+    //                 slug: node.slug,
+    //                 limit: postsPerPage,
+    //                 skip: i * postsPerPage,
+    //                 numberOfPages: numberOfPages,
+    //                 humanPageNumber: currentPage,
+    //                 prevPageNumber: prevPageNumber,
+    //                 nextPageNumber: nextPageNumber,
+    //                 previousPagePath: previousPagePath,
+    //                 nextPagePath: nextPagePath,
+    //             },
+    //         })
+    //     })
+    // })
 
     // Create author pages
-    authors.forEach(({ node }) => {
-        const totalPosts = node.postCount !== null ? node.postCount : 0
-        const numberOfPages = Math.ceil(totalPosts / postsPerPage)
+    // authors.forEach(({ node }) => {
+    //     const totalPosts = node.postCount !== null ? node.postCount : 0
+    //     const numberOfPages = Math.ceil(totalPosts / postsPerPage)
 
-        // This part here defines, that our author pages will use
-        // a `/author/:slug/` permalink.
-        node.url = `/author/${node.slug}/`
+    //     // This part here defines, that our author pages will use
+    //     // a `/author/:slug/` permalink.
+    //     node.url = `/author/${node.slug}/`
 
-        Array.from({ length: numberOfPages }).forEach((_, i) => {
-            const currentPage = i + 1
-            const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
-            const nextPageNumber =
-                currentPage + 1 > numberOfPages ? null : currentPage + 1
-            const previousPagePath = prevPageNumber
-                ? prevPageNumber === 1
-                    ? node.url
-                    : `${node.url}page/${prevPageNumber}/`
-                : null
-            const nextPagePath = nextPageNumber
-                ? `${node.url}page/${nextPageNumber}/`
-                : null
+    //     Array.from({ length: numberOfPages }).forEach((_, i) => {
+    //         const currentPage = i + 1
+    //         const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
+    //         const nextPageNumber =
+    //             currentPage + 1 > numberOfPages ? null : currentPage + 1
+    //         const previousPagePath = prevPageNumber
+    //             ? prevPageNumber === 1
+    //                 ? node.url
+    //                 : `${node.url}page/${prevPageNumber}/`
+    //             : null
+    //         const nextPagePath = nextPageNumber
+    //             ? `${node.url}page/${nextPageNumber}/`
+    //             : null
 
-            createPage({
-                path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
-                component: authorTemplate,
-                context: {
-                    // Data passed to context is available
-                    // in page queries as GraphQL variables.
-                    slug: node.slug,
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numberOfPages: numberOfPages,
-                    humanPageNumber: currentPage,
-                    prevPageNumber: prevPageNumber,
-                    nextPageNumber: nextPageNumber,
-                    previousPagePath: previousPagePath,
-                    nextPagePath: nextPagePath,
-                },
-            })
-        })
-    })
+    //         createPage({
+    //             path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
+    //             component: authorTemplate,
+    //             context: {
+    //                 // Data passed to context is available
+    //                 // in page queries as GraphQL variables.
+    //                 slug: node.slug,
+    //                 limit: postsPerPage,
+    //                 skip: i * postsPerPage,
+    //                 numberOfPages: numberOfPages,
+    //                 humanPageNumber: currentPage,
+    //                 prevPageNumber: prevPageNumber,
+    //                 nextPageNumber: nextPageNumber,
+    //                 previousPagePath: previousPagePath,
+    //                 nextPagePath: nextPagePath,
+    //             },
+    //         })
+    //     })
+    // })
 
     // Create pages
-    pages.forEach(({ node }) => {
-        // This part here defines, that our pages will use
-        // a `/:slug/` permalink.
-        node.url = `/${node.slug}/`
+    // pages.forEach(({ node }) => {
+    //     // This part here defines, that our pages will use
+    //     // a `/:slug/` permalink.
+    //     node.url = `/${node.slug}/`
 
-        createPage({
-            path: node.url,
-            component: pageTemplate,
-            context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
-                slug: node.slug,
-            },
-        })
-    })
+    //     createPage({
+    //         path: node.url,
+    //         component: pageTemplate,
+    //         context: {
+    //             // Data passed to context is available
+    //             // in page queries as GraphQL variables.
+    //             slug: node.slug,
+    //         },
+    //     })
+    // })
 
     // Create post pages
     posts.forEach(({ node }) => {
@@ -190,13 +190,7 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage,
         items: posts,
         itemsPerPage: postsPerPage,
-        component: indexTemplate,
-        pathPrefix: ({ pageNumber }) => {
-            if (pageNumber === 0) {
-                return `/`
-            } else {
-                return `/page`
-            }
-        },
+        component: blogTemplate,
+        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/blog` : `/blog/page`),
     })
 }

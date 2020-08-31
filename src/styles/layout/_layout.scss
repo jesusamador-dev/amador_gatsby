@@ -1,0 +1,99 @@
+.container {
+    max-width: 1300px;
+    width: 90%;
+    display: grid;
+    margin: 0 auto;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+
+/* =======================
+    Estilos del hero
+    =======================*/
+
+.hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+    height: auto;
+    @include respond-to(lg) {
+        grid-template-columns: 1fr 1fr;
+        min-height: calc(100vh - 80px);
+    }
+}
+
+
+/* =======================
+    Estilos del about
+    =======================*/
+
+.about {
+    grid-template-columns: 1fr;
+    padding: 3rem 0 0;
+    height: auto;
+    margin-bottom: 3rem;
+    @include respond-to(lg) {
+        grid-template-columns: 7fr 6fr;
+        min-height: 100vh;
+        margin-bottom: 5rem;
+    }
+}
+
+
+/* =======================
+    Estilos del portfolio
+    =======================*/
+
+.portfolio {
+    grid-template-columns: 1fr;
+    padding: 3rem 0 0;
+}
+
+
+/* =======================
+    Estilos del contacto
+    =======================*/
+
+.contact {
+    grid-template-columns: 1fr;
+    padding-bottom: 3rem;
+    @include respond-to(lg) {
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 5rem;
+    }
+}
+
+
+/* =======================
+    Estilos del footer
+    =======================*/
+
+.footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 0 2rem;
+}
+
+
+/* =======================
+    Estilos del blog
+    =======================*/
+
+.blog {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    @include respond-to(md) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include respond-to(lg) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include respond-to(xl) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.post {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+    align-items: flex-start;
+}

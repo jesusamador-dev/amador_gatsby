@@ -4,24 +4,33 @@ import { Link } from 'gatsby'
 
 const Pagination = ({ pageContext }) => {
     const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } = pageContext
-
+    console.log(pageContext)
     return (
         <nav className="pagination" role="navigation">
-            <div>
+            <div className="pagination__button">
                 {previousPagePath && (
-
                     <Link to={previousPagePath} rel="prev">
-                            Previous
+                        Anterior
                     </Link>
-
                 )}
+
             </div>
-            {numberOfPages > 1 && <div className="pagination-location">Page {humanPageNumber} of {numberOfPages}</div>}
-            <div>
+            {numberOfPages > 1 && (
+                <div className="pagination__location">
+                    Página
+                    {` `}
+                    {humanPageNumber}
+                    {` `}
+          de
+                    {` `}
+                    {numberOfPages}
+                </div>
+            )}
+            <div className="pagination__button">
                 {nextPagePath && (
 
                     <Link to={nextPagePath} rel="next">
-                            Next
+                        Siguiente
                     </Link>
                 )}
             </div>

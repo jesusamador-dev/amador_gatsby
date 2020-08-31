@@ -1,18 +1,18 @@
 import { graphql } from 'gatsby'
 
 /**
-* These so called fragments are the fields we query on each template.
-* A fragment make queries a bit more reuseable, so instead of typing and
-* remembering every possible field, you can just use
-*   ...GhostPostFields
-* for example to load all post fields into your GraphQL query.
-*
-* Further info 👉🏼 https://www.gatsbyjs.org/docs/graphql-reference/#fragments
-*
-*/
+ * These so called fragments are the fields we query on each template.
+ * A fragment make queries a bit more reuseable, so instead of typing and
+ * remembering every possible field, you can just use
+ *   ...GhostPostFields
+ * for example to load all post fields into your GraphQL query.
+ *
+ * Further info 👉🏼 https://www.gatsbyjs.org/docs/graphql-reference/#fragments
+ *
+ */
 
 // Used for tag archive pages
-export const ghostTagFields = graphql`
+export const ghostTagFields = graphql `
     fragment GhostTagFields on GhostTag {
         slug
         name
@@ -25,7 +25,7 @@ export const ghostTagFields = graphql`
 `
 
 // Used for author pages
-export const ghostAuthorFields = graphql`
+export const ghostAuthorFields = graphql `
     fragment GhostAuthorFields on GhostAuthor {
         slug
         name
@@ -40,7 +40,7 @@ export const ghostAuthorFields = graphql`
 `
 
 // Used for single posts
-export const ghostPostFields = graphql`
+export const ghostPostFields = graphql `
     fragment GhostPostFields on GhostPost {
         # Main fields
         id
@@ -48,19 +48,19 @@ export const ghostPostFields = graphql`
         slug
         featured
         feature_image
-        excerpt
+        #excerpt
         custom_excerpt
         visibility
 
         # Dates formatted
-        created_at_pretty: created_at(formatString: "DD MMMM, YYYY")
-        published_at_pretty: published_at(formatString: "DD MMMM, YYYY")
-        updated_at_pretty: updated_at(formatString: "DD MMMM, YYYY")
+        #created_at_pretty: created_at(formatString: "DD MMMM, YYYY")
+        #published_at_pretty: published_at(formatString: "DD MMMM, YYYY")
+        #updated_at_pretty: updated_at(formatString: "DD MMMM, YYYY")
 
         # Dates unformatted
-        created_at
+        #created_at
         published_at
-        updated_at
+        #updated_at
 
         # SEO
         meta_title
@@ -132,7 +132,7 @@ export const ghostPostFields = graphql`
 `
 
 // Used for single pages
-export const ghostPageFields = graphql`
+export const ghostPageFields = graphql `
     fragment GhostPageFields on GhostPage {
         # Main fields
         title
@@ -223,7 +223,7 @@ export const ghostPageFields = graphql`
 `
 
 // Used for settings
-export const ghostSettingsFields = graphql`
+export const ghostSettingsFields = graphql `
     fragment GhostSettingsFields on GhostSettings {
         title
         description

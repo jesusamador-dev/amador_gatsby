@@ -1,0 +1,50 @@
+/* =======================
+    Variables de colores
+    =======================*/
+
+
+/* Color Theme Swatches in Hex */
+
+$My-Color-Theme-1-hex: #1E72FA;
+$My-Color-Theme-2-hex: #141C2C;
+$My-Color-Theme-3-hex: #0F0D18;
+$My-Color-Theme-4-hex: #CECED8;
+$My-Color-Theme-5-hex: #FFFFFF;
+$My-Color-Theme-6-hex: rgb(97, 97, 97);
+@media (prefers-color-scheme: dark) {
+     :root {
+        --primary-color: #1E72FA;
+        --secondary-color: #141C2C;
+        --color-text: #F4F6FC;
+        --color-text-secondary: #CECED8;
+        --background-color: #141C2C;
+        background-color: var(--background-color);
+        color: var(--color-text);
+    }
+}
+
+:root {
+    --primary-color: #1E72FA;
+    --secondary-color: #141C2C;
+    --color-text: #0F0D18;
+    --background-color: #FFFFFF;
+    --blog-card-background: #ffffff;
+    --color-text-secondary: rgb(97, 97, 97);
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+    --background-pre: #f0f0f0;
+    transition: .3s;
+}
+
+[data-theme="dark"] {
+    --color-text: #F4F6FC;
+    --color-text-secondary: #CECED8;
+    --background-color: #152535;
+    --background-pre: #1c2938;
+    --blog-card-background: #17314c;
+    background-color: var(--background-color);
+    color: var(--color-text);
+}
+
+[data-theme="dark"] img {
+    filter: brightness(.8) contrast(1.2);
+}

@@ -1,0 +1,114 @@
+/* =======================
+    Animaciones hamburger button
+    =======================*/
+
+@keyframes span_top_45 {
+    0% {
+        top: 0;
+        transform: rotate(0);
+    }
+    50% {
+        top: 7px;
+        transform: rotate(0);
+    }
+    100% {
+        top: 7px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes span_top_2_45 {
+    0% {
+        top: 7px;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: 7px;
+        transform: rotate(0);
+    }
+    100% {
+        top: 0;
+        transform: rotate(0);
+    }
+}
+
+@keyframes span_scaled_1 {
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes span_scaled_2 {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes burger_bottom_135 {
+    0% {
+        bottom: 0px;
+        transform: rotate(0);
+    }
+    50% {
+        bottom: 7px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 7px;
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes span_bottom_2_135 {
+    0% {
+        bottom: 7px;
+        transform: rotate(135deg);
+    }
+    50% {
+        bottom: 7px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+}
+
+.animate_text {
+    display: inline-block;
+    animation-name: text_transform;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes text_transform {
+    0% {
+        transform: translateY(-100%) rotateX(-90deg) rotateZ(-35deg);
+        transform-origin: 50% 50% -50%;
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) rotateX(0deg) rotateZ(0deg);
+        transform-origin: 50% 50% 0;
+        opacity: 1;
+    }
+    // 0% {
+    //     transform: translate(0px, -100%) rotateZ(35deg);
+    //     transform-origin: 0% 50%;
+    //     // transform-style: preserve-3d;
+    // }
+    // 100% {
+    //     transform: translate(0px, 0px) rotateZ(0deg);
+    //     transform-origin: 50% 50%;
+    //     // transform-style: preserve-3d;
+    // }
+}

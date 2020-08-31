@@ -1,0 +1,97 @@
+.hero {
+    &__image {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 0 2rem;
+    }
+    &__content {
+        grid-row-start: 2;
+        font-family: $font2, monospace;
+        letter-spacing: .04rem;
+    }
+    &__title {
+        font-size: 1.4rem;
+        color: var(--color-text);
+        margin: 0 0 .5rem;
+    }
+    &__subtitle {
+        color: $My-Color-Theme-1-hex;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    &__contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 2rem;
+    }
+    &__text {
+        font-family: $font1;
+        color: var(--color-text-secondary);
+        letter-spacing: 0;
+    }
+    &__email {
+        margin-bottom: 1rem;
+    }
+    &__email,
+    &__github {
+        p {
+            font-weight: 700;
+            margin-bottom: .85rem;
+        }
+        a {
+            font-family: $font1;
+            text-decoration: none;
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            letter-spacing: 0;
+        }
+    }
+    &__buttons {
+        display: flex;
+        justify-content: center;
+    }
+    @include respond-to(md) {
+        &__title {
+            font-size: 2.1rem;
+        }
+        &__subtitle {
+            font-size: 2rem;
+        }
+    }
+    @include respond-to(lg) {
+        &__image {
+            grid-column: 2;
+            padding: 0;
+        }
+        &__content {
+            grid-column: 1;
+            grid-row: 1;
+            line-height: 1.2;
+        }
+    }
+    @include respond-to(xl) {
+        &__image {
+            padding: 0 3.5rem;
+        }
+        &__title {
+            font-size: 2.7rem;
+        }
+        &__subtitle {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.main_hero {
+    background-image: url(../images/background_movil2.svg);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @include respond-to(lg) {
+        background-image: url(../images/back_hero.svg);
+        background-position: 0% 100%;
+        background-size: cover;
+    }
+}

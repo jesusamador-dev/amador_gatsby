@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* ======================
+   Variables de fuentes
+   ======================= */
+
+$font1: Open sans;
+$font2: IBM Plex Mono;
+
+/* ======================
+   Breakpoints Mobile First
+   ======================= */
+
+$breakpoints: ( 'sm': 576px,
+'md': 768px,
+'lg': 992px,
+'xl': 1200px) !default;

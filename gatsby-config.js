@@ -27,12 +27,12 @@ if (process.env.NODE_ENV === `production` && config.siteUrl === `http://localhos
 }
 
 /**
-* This is the place where you can tell Gatsby which plugins to use
-* and set them up the way you want.
-*
-* Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
-*
-*/
+ * This is the place where you can tell Gatsby which plugins to use
+ * and set them up the way you want.
+ *
+ * Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
+ *
+ */
 module.exports = {
     siteMetadata: {
         siteUrl: config.siteUrl,
@@ -61,10 +61,8 @@ module.exports = {
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-source-ghost`,
-            options:
-                process.env.NODE_ENV === `development`
-                    ? ghostConfig.development
-                    : ghostConfig.production,
+            options: process.env.NODE_ENV === `development` ?
+                ghostConfig.development : ghostConfig.production,
         },
         /**
          *  Utility Plugins
@@ -187,5 +185,7 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
+        `gatsby-plugin-sass`,
+        `gatsby-plugin-anchor-links`,
     ],
 }

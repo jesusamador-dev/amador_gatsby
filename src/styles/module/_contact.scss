@@ -1,0 +1,38 @@
+.contact {
+    justify-items: center;
+    align-items: stretch;
+    &__header {
+        grid-column: 1 / -1;
+    }
+    &__title {
+        font-family: $font2, monospace;
+        font-size: 1.5rem;
+        color: var(--color-text);
+        text-align: flex-start;
+        @include respond-to(lg) {
+            text-align: center;
+            font-size: 2.3rem;
+        }
+    }
+    &__text {
+        color: var(--color-text);
+    }
+    &__form {
+        text-align: center;
+        grid-row-start: 2;
+    }
+    &__image {
+        padding: 0 3.5rem;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    @include respond-to(lg) {
+        &__form {
+            grid-row-start: 1;
+        }
+        &__image {
+            padding: 0 3.5rem;
+            grid-row-start: 1;
+        }
+    }
+}
