@@ -186,6 +186,11 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-sass`,
-        `gatsby-plugin-anchor-links`,
+        {
+            resolve: `gatsby-plugin-anchor-links`,
+            options: {
+                offset: -100,
+            },
+        },
     ],
 }

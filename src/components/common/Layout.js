@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import ActiveLinks from "../../plugins/activeLinkObserver"
+import { StaticQuery, graphql } from 'gatsby'
 // import Img from 'gatsby-image'
 // import config from '../../utils/siteConfig'
 import Header from './Header'
@@ -10,6 +11,7 @@ import Footer from './Footer'
 // Styles
 import '../../styles/app.css'
 import "../../styles/styles.scss"
+import 'aos/src/sass/aos.scss'
 
 /**
  * Main layout component
@@ -19,11 +21,17 @@ import "../../styles/styles.scss"
  * styles, and meta data for each page.
  *
  */
-const DefaultLayout=({ data, children, bodyClass, isHome }) => {
-    const site=data.allGhostSettings.edges[0].node
-    const twitterUrl=site.twitter? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`:null
-    const facebookUrl=site.facebook? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}`:null
-
+const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+    const site = data.allGhostSettings.edges[0].node
+    const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
+    const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
+    useEffect(() => {
+        if (isHome) {
+            new ActiveLinks(`#home`, `link_home`, { root: null, rootMargin: `0px`, threshold: .5 })
+            new ActiveLinks(`#about`, `link_about`, { root: null, rootMargin: `0px`, threshold: .5 })
+            new ActiveLinks(`#contact`, `link_contact`, { root: null, rootMargin: `0px`, threshold: .5 })
+        }
+    }, [])
     return (
         <>
             <Helmet>
@@ -39,7 +47,7 @@ const DefaultLayout=({ data, children, bodyClass, isHome }) => {
     )
 }
 
-DefaultLayout.propTypes={
+DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
@@ -49,7 +57,7 @@ DefaultLayout.propTypes={
     }).isRequired,
 }
 
-const DefaultLayoutSettingsQuery=props => (
+const DefaultLayoutSettingsQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostSettings {

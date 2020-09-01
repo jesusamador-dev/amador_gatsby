@@ -40,6 +40,7 @@
         "@hookform/resolvers": "^0.1.0",
         "@tryghost/helpers": "1.1.30",
         "@tryghost/helpers-gatsby": "1.0.34",
+        "aos": "^2.3.4",
         "cheerio": "1.0.0-rc.3",
         "emailjs-com": "^2.6.3",
         "fecha": "^4.2.0",
@@ -64,6 +65,7 @@
         "react-dom": "16.13.1",
         "react-helmet": "6.1.0",
         "react-hook-form": "^6.7.0",
+        "react-router-hash-link": "^2.0.0",
         "yup": "^0.29.3"
     }
 }

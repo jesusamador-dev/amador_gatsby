@@ -60,7 +60,7 @@ export const ghostPostFields = graphql `
         # Dates unformatted
         #created_at
         published_at
-        #updated_at
+        updated_at
 
         # SEO
         meta_title

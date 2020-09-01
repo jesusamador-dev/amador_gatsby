@@ -5,7 +5,7 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import useDate from '../../hooks/useDate'
 
 const PostCard = ({ post }) => {
-    const url = `blog/post/${post.slug}/`
+    const url = `/blog/${post.slug}`
     const readingTime = readingTimeHelper(post, { minute: `1 minuto de lectura`, minutes: `% minutos de lectura` })
     const image = post?.feature_image
     const { tags } = post

@@ -6,7 +6,7 @@ const { paginate } = require(`gatsby-awesome-pagination`)
  * Here is the place where Gatsby creates the URLs for all the
  * posts, tags, pages and authors that we fetched from the Ghost site.
  */
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async({ graphql, actions }) => {
     const { createPage } = actions
 
     const result = await graphql(`
@@ -172,7 +172,7 @@ exports.createPages = async ({ graphql, actions }) => {
     posts.forEach(({ node }) => {
         // This part here defines, that our posts will use
         // a `/:slug/` permalink.
-        node.url = `/${node.slug}/`
+        node.url = `blog/${node.slug}/`
 
         createPage({
             path: node.url,

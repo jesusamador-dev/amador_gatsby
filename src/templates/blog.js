@@ -6,13 +6,9 @@ import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 const Blog = ({ data, location, pageContext }) => {
-    console.log(data.ghostPage)
     const page = data.ghostPage
     const posts = data.allGhostPost.edges
 
-    // const backgroundDefault = `image`
-    // console.log(blogInfo)
-    // style={{ backgroundImage: `url(${blogInfo?.feature_image || backgroundDefault})` }}
     return (
         <Layout>
             <MetaData location={location} />

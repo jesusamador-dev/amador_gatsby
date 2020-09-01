@@ -32,6 +32,8 @@ const Header = () => {
         body.classList.toggle(`mobile_menu_close`)
     }
 
+
+
     return (
         <header className="header">
             <div className="navbar_container">
@@ -56,7 +58,7 @@ const Header = () => {
                     <ul className="navbar">
                         <li className="navbar__item">
                             <HashLink
-                            className="navbar__link"
+                                className="navbar__link link_home"
                                 to="/#home"
                             >
                                 <span>
@@ -66,9 +68,8 @@ const Header = () => {
                         </li>
                         <li className="navbar__item">
                             <HashLink
-                            className="navbar__link"
+                                className="navbar__link link_about"
                                 to="/#about"
-
                             >
                                 <span>
                                     <span className="navbar__text">Acerca de m&iacute;</span>
@@ -83,7 +84,7 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li className="navbar__item">
-                            <NavLink activeClassName="active" className="navbar__link" to="/blog">
+                            <NavLink activeClassName="active" partiallyActive={true} className="navbar__link" to="/blog">
                                 <span>
                                     <span className="navbar__text">Blog</span>
                                 </span>
@@ -91,9 +92,8 @@ const Header = () => {
                         </li>
                         <li className="navbar__item">
                             <HashLink
-                            className="navbar__link"
+                                className="navbar__link link_contact"
                                 to="/#contact"
-
                             >
                                 <span>
                                     <span className="navbar__text">Contacto</span>
@@ -145,6 +145,7 @@ const Header = () => {
                         <HashLink
                             onClick={toggleMenu}
                             to="/home"
+                            className="link_home"
                         >
                             <span>
                                 <span className="navbar__text">Inicio</span>
@@ -155,7 +156,7 @@ const Header = () => {
                         <HashLink
                             onClick={toggleMenu}
                             to="/#about"
-
+                            className="link_about"
                         >
                             <span>
                                 <span className="navbar__text">Acerca de m&iacute;</span>
@@ -180,8 +181,9 @@ const Header = () => {
                         <HashLink
                             onClick={toggleMenu}
                             to="/#contact"
+                            className="link_contact"
                         >
-              Contacto
+                            Contacto
                         </HashLink>
                     </li>
                     <li>
