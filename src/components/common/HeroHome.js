@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import AOS from 'aos'
 import hero from '../../images/image_1.svg'
 import curriculum from '../../files/JesusAmadorCV.pdf'
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const HeroHome = () => {
     useEffect(() => {
@@ -21,11 +22,11 @@ const HeroHome = () => {
                 <div className="hero__contact">
                     <div data-aos-delay="1500" data-aos="fade-right" className="hero__email">
                         <p>Email:</p>
-                        <a href="mailto:jesus.macias.amador@gmail.com">jesus.macias.amador@gmail.com</a>
+                        <OutboundLink href="mailto:jesus.macias.amador@gmail.com">jesus.macias.amador@gmail.com</OutboundLink>
                     </div>
                     <div data-aos="fade-left" data-aos-delay="1500" className="hero__github">
                         <p>Github</p>
-                        <a target="_blank" rel="noreferrer" href="https://github.com/jesusamador-dev">github.com/jesusamador-dev</a>
+                        <OutboundLink target="_blank" rel="noreferrer" href="https://github.com/jesusamador-dev">github.com/jesusamador-dev</OutboundLink>
                     </div>
                 </div>
                 <div className="hero__buttons" data-aos="fade-up" data-aos-delay="1800">

@@ -1,21 +1,22 @@
 import React from 'react'
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Footer = () => (
     <footer>
         <section className="container footer">
             <div className="footer__redes">
-                <a className="icon" rel="noreferrer" target="_blank" href="https://github.com/jesusamador-dev">
+                <OutboundLink className="icon" rel="noreferrer" target="_blank" href="https://github.com/jesusamador-dev">
                     <i className="fab fa-github" />
-                </a>
-                <a className="icon" rel="noreferrer" target="_blank" href="https://twitter.com/jesusamador_dev">
+                </OutboundLink>
+                <OutboundLink className="icon" rel="noreferrer" target="_blank" href="https://twitter.com/jesusamador_dev">
                     <i className="fab fa-twitter" />
-                </a>
-                <a className="icon" rel="noreferrer" target="_blank" href="https://www.instagram.com/jesusamador_dev/">
+                </OutboundLink>
+                <OutboundLink className="icon" rel="noreferrer" target="_blank" href="https://www.instagram.com/jesusamador_dev/">
                     <i className="fab fa-instagram" />
-                </a>
-                <a className="icon" href="https://www.linkedin.com/in/jes%C3%BAs-guadalupe-macias-amador/" target="_blank" rel="noreferrer">
+                </OutboundLink>
+                <OutboundLink className="icon" href="https://www.linkedin.com/in/jes%C3%BAs-guadalupe-macias-amador/" target="_blank" rel="noreferrer">
                     <i className="fab fa-linkedin-in" />
-                </a>
+                </OutboundLink>
             </div>
             <div className="footer__name">
                 <p>Desarrollador Web</p>

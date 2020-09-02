@@ -1,7 +1,8 @@
 import React from 'react'
 import abouImage from '../../images/undraw_on_the_office_fbfs.svg'
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-const AboutHome=() => (
+const AboutHome = () => (
     <section className="container about">
         <div className="about__image">
             <img data-aos="zoom-in" data-aos-delay="200" src={abouImage} alt="Dibujo de una persona sentada sobre un escritorio con un celular en la mano" />
@@ -19,15 +20,15 @@ const AboutHome=() => (
                 Sígueme en:
             </h4>
             <div data-aos="fade-up" data-aos-delay="900" className="about__redes_sociales">
-                <a className="icon" rel="noreferrer" target="_blank" href="https://github.com/jesusamador-dev">
+                <OutboundLink className="icon" rel="noreferrer" target="_blank" href="https://github.com/jesusamador-dev">
                     <i className="fab fa-github" />
-                </a>
-                <a className="icon" rel="noreferrer" target="_blank" href="https://twitter.com/jesusamador_dev">
+                </OutboundLink>
+                <OutboundLink className="icon" rel="noreferrer" target="_blank" href="https://twitter.com/jesusamador_dev">
                     <i className="fab fa-twitter" />
-                </a>
-                <a className="icon" rel="noreferrer" target="_blank" href="https://www.instagram.com/jesusamador_dev/">
+                </OutboundLink>
+                <OutboundLink className="icon" rel="noreferrer" target="_blank" href="https://www.instagram.com/jesusamador_dev/">
                     <i className="fab fa-instagram" />
-                </a>
+                </OutboundLink>
             </div>
         </div>
     </section>

@@ -38,6 +38,25 @@ module.exports = {
         siteUrl: config.siteUrl,
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: `G-2RH9J9NXYM`,
+                head: true,
+                anonymize: true,
+                respectDNT: true,
+                pageTransitionDelay: 0,
+                defer: true,
+                cookieDomain: `jesusamador.com`,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-hotjar`,
+            options: {
+                id: 1971487,
+                sv: 6,
+            },
+        },
         /**
          *  Content Plugins
          */
@@ -192,5 +211,6 @@ module.exports = {
                 offset: -100,
             },
         },
+
     ],
 }

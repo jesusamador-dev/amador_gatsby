@@ -3,6 +3,7 @@ import { Link as NavLink } from 'gatsby'
 import { AnchorLink as HashLink } from "gatsby-plugin-anchor-links"
 import logoWhite from '../../images/logo2.svg'
 import logo from '../../images/logo.svg'
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Header = () => {
     const [checked, setChecked] = useState(localStorage.getItem(`theme`) === `dark`)
@@ -31,8 +32,6 @@ const Header = () => {
         body.classList.toggle(`mobile_menu_open`)
         body.classList.toggle(`mobile_menu_close`)
     }
-
-
 
     return (
         <header className="header">
@@ -77,14 +76,14 @@ const Header = () => {
                             </HashLink>
                         </li>
                         <li className="navbar__item">
-                            <NavLink activeClassName="active" className="navbar__link" to="/projects">
+                            <NavLink activeClassName="active" className="navbar__link" to="#">
                                 <span>
                                     <span className="navbar__text">Proyectos</span>
                                 </span>
                             </NavLink>
                         </li>
                         <li className="navbar__item">
-                            <NavLink activeClassName="active" partiallyActive={true} className="navbar__link" to="/blog">
+                            <NavLink activeClassName="active" partiallyActive={true} className="navbar__link" to="#">
                                 <span>
                                     <span className="navbar__text">Blog</span>
                                 </span>
@@ -115,18 +114,18 @@ const Header = () => {
 
                 <div className="delimitter" />
                 <div className="nav__redes_sociales">
-                    <a className="nav__icon" href="https://www.instagram.com/jesusamador_dev/" target="_blank" rel="noreferrer">
+                    <OutboundLink className="nav__icon" href="https://www.instagram.com/jesusamador_dev/" target="_blank" rel="noreferrer">
                         <i className="fab fa-instagram" />
-                    </a>
-                    <a className="nav__icon" href="https://twitter.com/jesusamador_dev" target="_blank" rel="noreferrer">
+                    </OutboundLink>
+                    <OutboundLink className="nav__icon" href="https://twitter.com/jesusamador_dev" target="_blank" rel="noreferrer">
                         <i className="fab fa-twitter" />
-                    </a>
-                    <a className="nav__icon" href="https://www.linkedin.com/in/jes%C3%BAs-guadalupe-macias-amador/" target="_blank" rel="noreferrer">
+                    </OutboundLink>
+                    <OutboundLink className="nav__icon" href="https://www.linkedin.com/in/jes%C3%BAs-guadalupe-macias-amador/" target="_blank" rel="noreferrer">
                         <i className="fab fa-linkedin-in" />
-                    </a>
-                    <a className="nav__icon" href="https://github.com/jesusamador-dev" target="_blank" rel="noreferrer">
+                    </OutboundLink>
+                    <OutboundLink className="nav__icon" href="https://github.com/jesusamador-dev" target="_blank" rel="noreferrer">
                         <i className="fab fa-github" />
-                    </a>
+                    </OutboundLink>
                 </div>
             </div>
             <nav className="navbar_container_mobile">
@@ -164,14 +163,14 @@ const Header = () => {
                         </HashLink>
                     </li>
                     <li className="navbar_mobile__item">
-                        <NavLink activeClassName="active" className="navbar_mobile__link" to="/projects">
+                        <NavLink activeClassName="active" className="navbar_mobile__link" to="#">
                             <span>
                                 <span className="navbar__text">Proyectos</span>
                             </span>
                         </NavLink>
                     </li>
                     <li className="navbar_mobile__item">
-                        <NavLink activeClassName="active" className="navbar_mobile__link" to="/blog">
+                        <NavLink activeClassName="active" className="navbar_mobile__link" to="#">
                             <span>
                                 <span className="navbar__text">Blog</span>
                             </span>
@@ -188,18 +187,18 @@ const Header = () => {
                     </li>
                     <li>
                         <div className="navbar_mobile__redes_sociales">
-                            <a className="nav__icon" href="https://www.instagram.com/jesusamador_dev/" target="_blank" rel="noreferrer">
+                            <OutboundLink className="nav__icon" href="https://www.instagram.com/jesusamador_dev/" target="_blank" rel="noreferrer">
                                 <i className="fab fa-instagram" />
-                            </a>
-                            <a className="nav__icon" href="https://twitter.com/jesusamador_dev" target="_blank" rel="noreferrer">
+                            </OutboundLink>
+                            <OutboundLink className="nav__icon" href="https://twitter.com/jesusamador_dev" target="_blank" rel="noreferrer">
                                 <i className="fab fa-twitter" />
-                            </a>
-                            <a className="nav__icon" href="https://www.linkedin.com/in/jes%C3%BAs-guadalupe-macias-amador/" target="_blank" rel="noreferrer">
+                            </OutboundLink>
+                            <OutboundLink className="nav__icon" href="https://www.linkedin.com/in/jes%C3%BAs-guadalupe-macias-amador/" target="_blank" rel="noreferrer">
                                 <i className="fab fa-linkedin-in" />
-                            </a>
-                            <a className="nav__icon" href="https://github.com/jesusamador-dev" target="_blank" rel="noreferrer">
+                            </OutboundLink>
+                            <OutboundLink className="nav__icon" href="https://github.com/jesusamador-dev" target="_blank" rel="noreferrer">
                                 <i className="fab fa-github" />
-                            </a>
+                            </OutboundLink>
                         </div>
                     </li>
                 </ul>
