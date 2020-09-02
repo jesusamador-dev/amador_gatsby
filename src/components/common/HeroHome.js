@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import AOS from 'aos'
-import hero from '../../images/image_1.svg'
+import hero from '../../images/image_1.png'
 import curriculum from '../../files/JesusAmadorCV.pdf'
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-const HeroHome = () => {
+const HeroHome=() => {
     useEffect(() => {
         AOS.init({
             duration: 800,
-            disable: window.innerWidth < 768,
+            disable: window.innerWidth<768,
         })
     })
     return (

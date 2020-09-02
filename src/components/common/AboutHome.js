@@ -1,8 +1,8 @@
 import React from 'react'
-import abouImage from '../../images/undraw_on_the_office_fbfs.svg'
+import abouImage from '../../images/undraw_on_the_office_fbfs.png'
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-const AboutHome = () => (
+const AboutHome=() => (
     <section className="container about">
         <div className="about__image">
             <img data-aos="zoom-in" data-aos-delay="200" src={abouImage} alt="Dibujo de una persona sentada sobre un escritorio con un celular en la mano" />

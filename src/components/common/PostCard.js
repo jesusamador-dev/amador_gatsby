@@ -11,7 +11,7 @@ const PostCard = ({ post }) => {
     const { tags } = post
     const { title } = post
     const author = post?.authors[0]
-    const customExcerpt = `${post?.custom_excerpt.substring(0, 100)}...`
+    const customExcerpt = post?.custom_excerpt ? `${post?.custom_excerpt.substring(0, 100)}...` : `No tiene descripción`
     const publishedDate = useDate(post?.published_at)
     return (
         <article className="blog_card">
