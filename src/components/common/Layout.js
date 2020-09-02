@@ -37,7 +37,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <Helmet>
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
-                <body className={`mobile_menu_close ${bodyClass}`} />
+                <body id="body" className={`mobile_menu_close ${bodyClass}`} />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
             </Helmet>
             <Header />
