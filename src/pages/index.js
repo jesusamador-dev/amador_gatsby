@@ -1,21 +1,9 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-const Layout = lazy(() => import(`../components/common/Layout`))
-const HeroHome = lazy(() => import(`../components/common/HeroHome`))
-const AboutHome = lazy(() => import(`../components/common/AboutHome`))
-const Contact = lazy(() => import(`../components/common/Contact`))
+
+import { Layout, HeroHome, Contact, AboutHome } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
-const renderLoader = () => (
-    <div className="loadign">
-        <div className="sk-folding-cube">
-            <div className="sk-cube1 sk-cube"></div>
-            <div className="sk-cube2 sk-cube"></div>
-            <div className="sk-cube4 sk-cube"></div>
-            <div className="sk-cube3 sk-cube"></div>
-        </div>
-    </div>
-)
 /**
  * Main index page (home page)
  *
@@ -27,21 +15,19 @@ const renderLoader = () => (
 const Index = ({ location }) => (
     <>
         <MetaData location={location} />
-        <Suspense fallback={renderLoader()}>
-            <Layout isHome={true}>
-                <main>
-                    <div id="home" className="main_hero">
-                        <HeroHome />
-                    </div>
-                    <div id="about" className="main_about">
-                        <AboutHome />
-                    </div>
-                    <div id="contact">
-                        <Contact />
-                    </div>
-                </main>
-            </Layout>
-        </Suspense>
+        <Layout isHome={true}>
+            <main>
+                <div id="home" className="main_hero">
+                    <HeroHome />
+                </div>
+                <div id="about" className="main_about">
+                    <AboutHome />
+                </div>
+                <div id="contact">
+                    <Contact />
+                </div>
+            </main>
+        </Layout>
     </>
 )
 

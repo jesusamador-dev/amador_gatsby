@@ -13,7 +13,7 @@ import AuthorMeta from './AuthorMeta'
 * JSON-LD (schema.org), Open Graph (Facebook) and Twitter properties.
 *
 */
-const MetaData=({
+const MetaData = ({
     data,
     settings,
     title,
@@ -21,9 +21,9 @@ const MetaData=({
     image,
     location,
 }) => {
-    const canonical=url.resolve(config.siteUrl, location.pathname)
-    const { ghostPost, ghostTag, ghostAuthor, ghostPage }=data
-    settings=settings.allGhostSettings.edges[0].node
+    const canonical = url.resolve(config.siteUrl, location.pathname)
+    const { ghostPost, ghostTag, ghostAuthor, ghostPage } = data
+    settings = settings.allGhostSettings.edges[0].node
     console.log(settings)
     if (ghostPost) {
         return (
@@ -56,11 +56,11 @@ const MetaData=({
             />
         )
     } else {
-        title=title||config.siteTitleMeta||settings.title
-        description=description||config.siteDescriptionMeta||settings.description
-        image=image||settings.cover_image||null
+        title = title || config.siteTitleMeta || settings.title
+        description = description || config.siteDescriptionMeta || settings.description
+        image = image || settings.cover_image || null
 
-        image=image? url.resolve(config.siteUrl, image):null
+        image = image ? url.resolve(config.siteUrl, image) : null
 
         return (
             <WebsiteMeta
@@ -75,11 +75,11 @@ const MetaData=({
     }
 }
 
-MetaData.defaultProps={
+MetaData.defaultProps = {
     data: {},
 }
 
-MetaData.propTypes={
+MetaData.propTypes = {
     data: PropTypes.shape({
         ghostPost: PropTypes.object,
         ghostTag: PropTypes.object,
@@ -97,7 +97,7 @@ MetaData.propTypes={
     image: PropTypes.string,
 }
 
-const MetaDataQuery=props => (
+const MetaDataQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostSettingsMetaData {
