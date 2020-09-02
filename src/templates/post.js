@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import useDate from '../hooks/useDate'
 
 /**
 * Single post view (/:slug)
@@ -14,7 +15,9 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
-
+    const publishedDate = useDate(post.published_at)
+    const author = post.authors[0]
+    console.log(post)
     return (
         <>
             <MetaData
@@ -26,16 +29,26 @@ const Post = ({ data, location }) => {
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
             </Helmet>
             <Layout>
+                <section className="post_header"
+                    style={{ backgroundImage: `url(${post.feature_image})` }}>
+                    <div className="filter" />
+                    <div className="post_header__content">
+                        <h1 className="content-title">{post.title}</h1>
+                        <div className="details">
+                            <div className="author">
+                                <img src={author.profile_image} alt={author.name} />
+                                <h3>{author.name}</h3>
+                            </div>
+                            <div className="details__date">
+                                <h6>{ publishedDate }</h6>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div className="container">
                     <article className="content">
-                        { post.feature_image ?
-                            <figure className="post-feature-image">
-                                <img src={ post.feature_image } alt={ post.title } />
-                            </figure> : null }
                         <section className="post-full-content">
-                            <h1 className="content-title">{post.title}</h1>
-
-                            {/* The main post content */ }
+                            {/* The main post content */}
                             <section
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
@@ -69,3 +82,4 @@ export const postQuery = graphql`
         }
     }
 `
+

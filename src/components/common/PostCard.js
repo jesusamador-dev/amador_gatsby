@@ -6,7 +6,7 @@ import useDate from '../../hooks/useDate'
 
 const PostCard = ({ post }) => {
     const url = `/blog/${post.slug}`
-    const readingTime = readingTimeHelper(post, { minute: `1 minuto de lectura`, minutes: `% minutos de lectura` })
+    const readingTime = readingTimeHelper(post, { minute: `1 min de lectura`, minutes: `% mins de lectura` })
     const image = post?.feature_image
     const { tags } = post
     const { title } = post
@@ -49,7 +49,7 @@ const PostCard = ({ post }) => {
                     <img src={author.profile_image} alt={author.name} />
                     {author.name}
                 </div>
-                <div className="blog_card__reading_time">
+                <div className="reading_time">
                     {readingTime}
                 </div>
             </div>

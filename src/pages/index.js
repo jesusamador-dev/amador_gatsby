@@ -14,7 +14,7 @@ import { MetaData } from '../components/common/meta'
  */
 const Index = ({ location }) => (
     <>
-        <MetaData location={location} />
+        <MetaData location={location} title="Inicio" />
         <Layout isHome={true}>
             <main>
                 <div id="home" className="main_hero">
