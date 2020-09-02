@@ -38,6 +38,7 @@ const Header = () => {
 
     return (
         <header className="header">
+            <div className="overlay" />
             <div className="navbar_container">
                 <div className="hamburger_box" onClick={toggleMenu}>
                     <div className="hamburger_inner">
