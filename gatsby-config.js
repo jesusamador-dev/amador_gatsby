@@ -41,12 +41,12 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: `G-2RH9J9NXYM`,
+                trackingId: `UA-177102992-1`,
                 head: true,
                 anonymize: true,
                 respectDNT: true,
                 pageTransitionDelay: 0,
-                defer: true,
+                defer: false,
                 cookieDomain: `jesusamador.com`,
             },
         },
