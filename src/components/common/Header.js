@@ -6,9 +6,12 @@ import logo from '../../images/logo.svg'
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Header = () => {
-    const [checked, setChecked] = useState(localStorage.getItem(`theme`) === `dark`)
+    const [checked, setChecked] = useState(null)
     let logoDefault = checked ? logoWhite : logo
 
+    useEffect(() => {
+        setChecked(localStorage.getItem(`theme`) === `dark`)
+    }, [])
     useEffect(() => {
         document
             .getElementsByTagName(`HTML`)[0]
