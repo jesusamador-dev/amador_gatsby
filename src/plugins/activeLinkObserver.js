@@ -6,7 +6,7 @@ class ActiveLink {
         this.link = link
         this.config = config
         this.handleIntersection = this.handleIntersection.bind(this)
-        // this.handler = this.handler(this)
+        this.handler = this.handler(this)
         if (document.readyState === `complete`) {
             this.handler()
         } else {
