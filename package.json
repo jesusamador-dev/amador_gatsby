@@ -24,7 +24,7 @@
     ],
     "scripts": {
         "serve": "gatsby build && NODE_ENV=production gatsby serve",
-        "build": "gatsby build",
+        "build": "npm install && gatsby build",
         "dev": "gatsby develop",
         "lint": "eslint . --ext .js --cache",
         "test": "echo \"Error: no test specified\" && exit 1"
