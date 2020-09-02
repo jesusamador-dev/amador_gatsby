@@ -26,8 +26,6 @@ class ActiveLink {
 
     handleIntersection(entries, observer) {
         const entry = entries[0]
-        console.log(`Este entry es de: ${this.link}:`)
-        console.log(entry)
         const isVisible = entry.IntersectionObserver >= this.config.threshold
         const links = document.getElementsByClassName(this.link)
         if (entry.isIntersecting) {

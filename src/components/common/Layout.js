@@ -40,6 +40,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <body id="body" className={`mobile_menu_close ${bodyClass}`} />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
             </Helmet>
+            <div className="overlay" />
             <Header />
             {children}
             <Footer />
