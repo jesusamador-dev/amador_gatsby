@@ -147,7 +147,7 @@ const Header = () => {
                         <HashLink
                             onClick={toggleMenu}
                             to="/home"
-                            className="link_home"
+                            className="navbar_mobile__link link_home"
                         >
                             <span>
                                 <span className="navbar__text">Inicio</span>
@@ -158,7 +158,7 @@ const Header = () => {
                         <HashLink
                             onClick={toggleMenu}
                             to="/#about"
-                            className="link_about"
+                            className="navbar_mobile__link link_about"
                         >
                             <span>
                                 <span className="navbar__text">Acerca de m&iacute;</span>
@@ -183,7 +183,7 @@ const Header = () => {
                         <HashLink
                             onClick={toggleMenu}
                             to="/#contact"
-                            className="link_contact"
+                            className="navbar_mobile__link link_contact"
                         >
                             Contacto
                         </HashLink>
