@@ -11,18 +11,6 @@ $My-Color-Theme-3-hex: #0F0D18;
 $My-Color-Theme-4-hex: #CECED8;
 $My-Color-Theme-5-hex: #FFFFFF;
 $My-Color-Theme-6-hex: rgb(97, 97, 97);
-@media (prefers-color-scheme: dark) {
-     :root {
-        --primary-color: #1E72FA;
-        --secondary-color: #141C2C;
-        --color-text: #F4F6FC;
-        --color-text-secondary: #CECED8;
-        --background-color: #141C2C;
-        background-color: var(--background-color);
-        color: var(--color-text);
-    }
-}
-
 :root {
     --primary-color: #1E72FA;
     --secondary-color: #141C2C;

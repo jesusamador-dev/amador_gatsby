@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import useDate from '../hooks/useDate'
 
 /**
@@ -17,7 +18,11 @@ const Post = ({ data, location }) => {
     const post = data.ghostPost
     const publishedDate = useDate(post.published_at)
     const author = post.authors[0]
-    console.log(post)
+    let disqusConfig = {
+        url: `https://jesusamador.com/blog/${post.slug}`,
+        identifier: post.id,
+        title: post.title,
+    }
     return (
         <>
             <MetaData
@@ -40,7 +45,7 @@ const Post = ({ data, location }) => {
                                 <h3>{author.name}</h3>
                             </div>
                             <div className="details__date">
-                                <h6>{ publishedDate }</h6>
+                                <h6>{publishedDate}</h6>
                             </div>
                         </div>
                     </div>
@@ -54,6 +59,8 @@ const Post = ({ data, location }) => {
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
                         </section>
+                        <CommentCount config={disqusConfig} placeholder={`Escribe un comentario`} />
+                        <Disqus config={disqusConfig} />
                     </article>
                 </div>
             </Layout>
@@ -66,6 +73,8 @@ Post.propTypes = {
         ghostPost: PropTypes.shape({
             codeinjection_styles: PropTypes.object,
             title: PropTypes.string.isRequired,
+            slug: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
         }).isRequired,

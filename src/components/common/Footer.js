@@ -3,7 +3,6 @@ import React from 'react'
 
 const Footer = () => (
     <>
-        <hr />
         <footer className="site-foot">
             <div className="site-foot-nav">
                 <div className="site-foot-nav-left">

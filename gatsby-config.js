@@ -211,6 +211,12 @@ module.exports = {
                 offset: -100,
             },
         },
+        {
+            resolve: `gatsby-plugin-disqus`,
+            options: {
+                shortname: `jesus-amador`,
+            },
+        },
 
     ],
 }
