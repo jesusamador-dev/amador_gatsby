@@ -112,6 +112,7 @@ export const ghostPostFields = graphql `
             meta_description
             meta_title
             visibility
+            id
         }
 
         # Content
@@ -203,6 +204,7 @@ export const ghostPageFields = graphql `
             meta_description
             meta_title
             visibility
+            id
         }
 
         # Content

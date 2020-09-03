@@ -13,6 +13,7 @@ const PostCard = ({ post }) => {
     const author = post?.authors[0]
     const customExcerpt = post?.custom_excerpt ? `${post?.custom_excerpt.substring(0, 100)}...` : `No tiene descripción`
     const publishedDate = useDate(post?.published_at)
+    let tagId = 0
     return (
         <article className="blog_card">
             <div className="blog_card__header">
@@ -22,13 +23,17 @@ const PostCard = ({ post }) => {
             </div>
             <div className="blog_card__tags">
                 {
-                    tags.map(tag => (
-                        <p key={tag.id}>
-                            {`#`}
-                            {tag.name}
-                            {`  `}
-                        </p>
-                    ))
+                    tags &&
+                    tags.map((tag) => {
+                        tagId += 1
+                        return (
+                            <p key={tagId}>
+                                {`#`}
+                                {tag.name}
+                                {`  `}
+                            </p>
+                        )
+                    })
                 }
             </div>
             <div className="blog_card__date">

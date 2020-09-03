@@ -8,7 +8,6 @@ import { MetaData } from '../components/common/meta'
 const Blog = ({ data, location, pageContext }) => {
     const page = data.ghostPage
     const posts = data.allGhostPost.edges
-
     return (
         <Layout>
             <MetaData
@@ -29,9 +28,11 @@ const Blog = ({ data, location, pageContext }) => {
                 </section>
                 <section className="container blog">
                     {
-                        posts.map(({ node }) => (
-                            <PostCard key={node.id} post={node} />
-                        ))
+                        posts.map(({ node }) => {
+                            {console.log(node)}
+
+                            return <PostCard key={node.uuid} post={node} />
+                        })
                     }
                 </section>
                 <section className="container_pagination">
@@ -66,7 +67,16 @@ export const pageQuery = graphql`
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
         limit: $limit,
-        skip: $skip
+        skip: $skip,
+        filter: {
+            tags: {
+                elemMatch: {
+                    slug: {
+                        nin: ["portfolio", "testimonials", "data-schema"]
+                    }
+                }
+            }
+        },
     ) {
       edges {
         node {
