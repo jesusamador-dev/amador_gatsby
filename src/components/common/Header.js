@@ -39,6 +39,8 @@ const Header = () => {
         const body = document.querySelector(`#body`)
         body.classList.toggle(`mobile_menu_open`)
         body.classList.toggle(`mobile_menu_close`)
+        console.log(body)
+        console.log(`cerrando menu`)
     }
 
     return (
@@ -149,9 +151,8 @@ const Header = () => {
                 </div>
 
                 <ul className="navbar_mobile">
-                    <li className="navbar_mobile__item">
+                    <li className="navbar_mobile__item" onClick={toggleMenu}>
                         <HashLink
-                            onClick={toggleMenu}
                             to="/#home"
                             className="navbar_mobile__link link_home"
                         >
@@ -160,9 +161,8 @@ const Header = () => {
                             </span>
                         </HashLink>
                     </li>
-                    <li className="navbar_mobile__item">
+                    <li className="navbar_mobile__item" onClick={toggleMenu}>
                         <HashLink
-                            onClick={toggleMenu}
                             to="/#about"
                             className="navbar_mobile__link link_about"
                         >
@@ -185,9 +185,8 @@ const Header = () => {
                             </span>
                         </NavLink>
                     </li>
-                    <li className="navbar_mobile__item">
+                    <li className="navbar_mobile__item" onClick={toggleMenu}>
                         <HashLink
-                            onClick={toggleMenu}
                             to="/#contact"
                             className="navbar_mobile__link link_contact"
                         >
