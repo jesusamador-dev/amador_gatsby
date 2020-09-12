@@ -189,7 +189,7 @@
                 position: relative;
             }
             &>span::after {
-                background-color: change-color($color: $My-Color-Theme-1-hex, $alpha: .8);
+                background-color: change-color($color: $My-Color-Theme-1-hex, $alpha: .6);
                 content: '';
                 position: absolute;
                 left: -5px;

@@ -31,6 +31,7 @@ $My-Color-Theme-6-hex: rgb(97, 97, 97);
     --blog-card-background: #17314c;
     background-color: var(--background-color);
     color: var(--color-text);
+    transition: .3s;
 }
 
 [data-theme="dark"] img {
