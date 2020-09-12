@@ -217,7 +217,5 @@ module.exports={
                 shortname: `jesus-amador`,
             },
         },
-        `gatsby-plugin-dark-mode`,
-
     ],
 }
