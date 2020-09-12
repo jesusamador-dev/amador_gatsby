@@ -92,7 +92,7 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li className="navbar__item">
-                            <NavLink activeClassName="active" partiallyActive={true} className="navbar__link" to="#">
+                            <NavLink activeClassName="active" partiallyActive={true} className="navbar__link" to="/blog">
                                 <span>
                                     <span className="navbar__text">Blog</span>
                                 </span>
@@ -152,7 +152,7 @@ const Header = () => {
                     <li className="navbar_mobile__item">
                         <HashLink
                             onClick={toggleMenu}
-                            to="/home"
+                            to="/#home"
                             className="navbar_mobile__link link_home"
                         >
                             <span>
@@ -172,14 +172,14 @@ const Header = () => {
                         </HashLink>
                     </li>
                     <li className="navbar_mobile__item">
-                        <NavLink activeClassName="active" className="navbar_mobile__link" to="#">
+                        <NavLink activeClassName="active" partiallyActive={true} className="navbar_mobile__link" to="#">
                             <span>
                                 <span className="navbar__text">Proyectos</span>
                             </span>
                         </NavLink>
                     </li>
                     <li className="navbar_mobile__item">
-                        <NavLink activeClassName="active" className="navbar_mobile__link" to="#">
+                        <NavLink activeClassName="active" partiallyActive={true} className="navbar_mobile__link" to="/blog">
                             <span>
                                 <span className="navbar__text">Blog</span>
                             </span>
