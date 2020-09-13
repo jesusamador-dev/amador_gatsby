@@ -39,8 +39,6 @@ const Header = () => {
         const body = document.querySelector(`#body`)
         body.classList.toggle(`mobile_menu_open`)
         body.classList.toggle(`mobile_menu_close`)
-        console.log(body)
-        console.log(`cerrando menu`)
     }
 
     return (

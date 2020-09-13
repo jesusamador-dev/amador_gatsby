@@ -7,7 +7,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     font-family: $font2, monospace;
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: .1rem;
     color: $My-Color-Theme-5-hex;
     &__content {
@@ -61,12 +61,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 13px;
     flex-direction: column;
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
     margin: 15% 0;
     background-color: var(--blog-card-background);
+    @include respond-to(lg) {
+        font-size: 13px;
+    }
     &__header {
         width: 90%;
         position: relative;
@@ -107,7 +109,7 @@
         }
     }
     &__date {
-        font-size: .7rem;
+        font-size: .9em;
         color: var(--color-text-secondary);
         width: 90%;
         margin: 0 auto;
@@ -123,8 +125,10 @@
     &__body {
         width: 90%;
         h3 {
-            font-family: $font1, monospace;
+            font-family: $font2, monospace;
             margin-bottom: .2rem;
+            font-size: 1.5em;
+            text-decoration: underline;
             a {
                 color: var(--color-text);
                 text-decoration: none;
@@ -135,6 +139,12 @@
         }
         p {
             color: var(--color-text-secondary);
+            font-size: 1.1em;
+        }
+        @include respond-to(lg) {
+            p {
+                font-size: 1em;
+            }
         }
     }
     &__footer {

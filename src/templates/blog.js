@@ -5,9 +5,9 @@ import { graphql } from 'gatsby'
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
-const Blog=({ data, location, pageContext }) => {
-    const page=data.ghostPage
-    const posts=data.allGhostPost.edges
+const Blog = ({ data, location, pageContext }) => {
+    const page = data.ghostPage
+    const posts = data.allGhostPost.edges
     return (
         <Layout>
             <MetaData
@@ -20,7 +20,7 @@ const Blog=({ data, location, pageContext }) => {
                     <div className="filter" />
                     <div className="hero_blog__content">
                         <h1> Blog </h1>
-                        <h3>{page?.title||``}</h3>
+                        <h3>{page?.title || ``}</h3>
                     </div>
                 </section>
                 <section className="recent_posts">
@@ -39,7 +39,7 @@ const Blog=({ data, location, pageContext }) => {
     )
 }
 
-Blog.propTypes={
+Blog.propTypes = {
     data: PropTypes.shape({
         ghostPage: PropTypes.shape({
             title: PropTypes.string.isRequired,
@@ -57,7 +57,7 @@ export default Blog
 
 // This page query loads all posts sorted descending by published date
 // The `limit` and `skip` values are used for pagination
-export const pageQuery=graphql`
+export const pageQuery = graphql`
   query GhostPostsQuery($limit: Int!, $skip: Int!) {
 
     allGhostPost(

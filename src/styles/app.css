@@ -15,7 +15,8 @@ hr {
 
 .content {
     margin: 0 auto;
-    line-height: 1.7em;
+    font-size: 1.1rem;
+    letter-spacing: .5px;
 }
 
 .content-body {
